@@ -1,6 +1,6 @@
-var app= angular.module('AnimalHotel', ['ngRoute']);
+var petHotel= angular.module('AnimalHotel', ['ngRoute']);
 
-app.config(['$routeProvider', function($routeProvider){
+petHotel.config(['$routeProvider', function($routeProvider){
     console.log('Route config loaded');
 
     $routeProvider

@@ -1,7 +1,11 @@
 
-h1{
+/* h1{
     font-family: 'Alegreya', serif;
 font-family: 'Satisfy', cursive;
 font-family: 'Poiret One', cursive;
 font-family: 'Sacramento', cursive;
+} */
+
+h1{
+    font-family: 'Sacramento', cursive;
 }

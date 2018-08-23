@@ -1,7 +1,9 @@
 petHotel.controller('PetController', function($http){
     let vm = this;
-    vm.petlist=[];
+    vm.petList=[];
 
+    getPets();
+    
     function getPets(){
         $http({
             method: 'GET',
@@ -13,4 +15,6 @@ petHotel.controller('PetController', function($http){
             console.log('Error getting pets:', error);
         });//end GET
     }//end getPets
+
+    
 })

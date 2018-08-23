@@ -1,7 +1,7 @@
 {
   "name": "chateau_de_animaux",
   "version": "1.0.0",
-  "description": "",
+  "description": "a luxury pet hotel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/k-burn/chateau_de_animaux#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
   }
 }
