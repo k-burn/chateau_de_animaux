@@ -1,0 +1,24 @@
+{
+  "name": "chateau_de_animaux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k-burn/chateau_de_animaux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k-burn/chateau_de_animaux/issues"
+  },
+  "homepage": "https://github.com/k-burn/chateau_de_animaux#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
