@@ -1,0 +1,13 @@
+<div ng-controller="GuestController as gc">
+        <h2 class="view-title">Current Guests</h2>
+        <div class="wrapper">
+        <div >
+          <div ng-repeat="guest in gc.currentGuests" class="card d-inline-block" style="width: 18rem;">
+            <img class="card-img-top" ng-src="images/{{guest.image_path}}" alt="photograph of guest" style="height: 10rem">
+            <div class="card-body">
+              <h4 class="card-title">{{guest.name}}</h4>
+              <p> {{guest.funFact}} </p>
+              <button ng-click= "gc.checkout(guest)">Check Out</button>
+            </div>
+        </div>
+      </div>

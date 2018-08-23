@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Château d'Animaux</title>
+    <title>Château d' Animaux</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
     <link rel="stylesheet" href="styles/styles.css">
@@ -23,8 +23,17 @@
     <script src="/scripts/client.js"></script>
     <!--Source in Controllers-->
 </head>
-<body>
-    <h1>Château d'Animaux</h1>
-    
+<body ng-app="AnimalHotel">
+    <h1><a class="title" href="/">Château Animaux</a></h1>
+    <nav class="navbar">
+        <div class="collapse navbar-collapse">
+            <a class= "button" href="#!/newClient" role="button">New Client</a>
+            <a class= "button" href="#!/newPet" role="button">New Pet</a>
+            <a class= "button" href="#!/checkInOut" role="button">Check In/Check Out</a>
+            <a class= "button" href="#!/currentGuests" role="button">Current Guests</a>
+            <a class= "button" href="#!/logbook" role="button">Log Book</a>
+        </div>
+    </nav>
+    <ng-view></ng-view>
 </body>
 </html>
