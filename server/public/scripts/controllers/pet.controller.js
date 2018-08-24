@@ -17,9 +17,11 @@ petHotel.controller('PetController', function($http){
     }//end getPets
 
     vm.addPet =function(petToAdd){
+        console.log('in addPet');
+        
         $http({
             method:'POST',
-            url: '/add',
+            url: '/pets',
             data: petToAdd
         }).then(function(response){
             console.log('In POST response of addPet', response.data);

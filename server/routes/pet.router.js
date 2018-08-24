@@ -14,7 +14,19 @@ router.get('/', (req, res)=>{
     }); //end GET  
 });
 
-router.post('/')
+router.post('/', (req, res) => {
+    console.log('POST /pets', req.body);
+    const pet=req.body;
+    const queryText = `INSERT INTO "pets" ("name", "type", "breed", "fun_fact", "allergies", "notes", "owner_name", "color", "image", "checked_in") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);`;
+    pool.query(queryText, [pet.name, pet.type, pet.breed, pet.funFact, pet.allergies, pet.notes, pet.owner, pet.color, pet.pic, false])
+        .then((result) => {
+            res.sendStatus(201);
+        })
+        .catch((error) =>{
+            console.log('error making pet inser query', error);
+            res.sendStatus(500);    
+        });
+});
 
 
 

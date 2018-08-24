@@ -4,8 +4,8 @@
 <form ng-submit= "pc.addPet(pc.petToAdd)">
     <label for="owner">Select Owner:</label>
     <!-- To populate owner names, will do an ng-repeat through owners names -->
-    <select id="owner" ng-model="">
-        <option ng-model="pc.petToAdd.owner" value="ownerName">Owner Name Will Be Here</option>
+    <select id="owner" ng-model="pc.petToAdd.owner">
+        <option value="ownerName">Owner Name Will Be Here</option>
     </select>
     <label for ="petName">Pet Name:</label>
     <input id="petName" ng-model="pc.petToAdd.name" type="text" placeholder="e.g. James Earl Jones">

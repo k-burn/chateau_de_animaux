@@ -1,11 +1,26 @@
-
-/* h1{
-    font-family: 'Alegreya', serif;
-font-family: 'Satisfy', cursive;
-font-family: 'Poiret One', cursive;
-font-family: 'Sacramento', cursive;
-} */
+/* font-family: 'Cormorant Unicase', serif;
+font-family: 'Cormorant Infant', serif;
+font-family: 'Codystar', cursive;
+font-family: 'Linden Hill', serif; */
 
 h1{
-    font-family: 'Sacramento', cursive;
+    font-family: 'Linden Hill', serif;
 }
+
+
+html, body{
+    height: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+    background-repeat:no-repeat;
+    background-position: absolute;
+    background-color: pink;
+    background-size: cover;
+    right: 50%;
+    bottom: 50%; 
+    margin: 0;
+}
+
+path {
+    fill: transparent;
+  }
