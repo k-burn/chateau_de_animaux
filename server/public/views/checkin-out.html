@@ -1,1 +1,58 @@
 <h2>Check In/ Check Out</h2>
+
+<div ng-controller="ClientController as cc">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+                <th>Number of Pets</th>
+                <th>Emergency Contact </th>
+                <th>Emergency Phone Number</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr ng-repeat = "client in cc.clientList">
+                <td>{{client.name}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.phone}}</td>
+                <td>number of pets will be here</td>
+                <td>{{client.emergency_name}}</td>
+                <td>{{client.emergency_phone}}</td>
+                <td>There will be an edit button here</td>
+                <td>There will be a delete button here</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div ng-controller="PetController as pc">
+        <table>
+            <tr>
+                <th>Pet Name</th>
+                <th>Owner Name</th>
+                <th>Type</th>
+                <th>Subtype/Breed</th>
+                <th>Color</th>
+                <th>Preferred Mendl's Order</th>
+                <th>Notes</th>
+                <th>Edit</th>
+                <th>Check-In/Check-Out</th>
+                <th>Remove</th>
+            </tr>
+            <tr ng-repeat = "pet in pc.petList">
+                <td>{{pet.name}}</td>
+                <td>{{pet.owner_name}}</td>
+                <td>{{pet.type}}</td>
+                <td>{{pet.breed}}</td>
+                <td>{{pet.color}}</td>
+                <td>{{pet.Mendl}}</td>
+                <td>{{pet.notes}}</td>
+                <td>There will be a edit button here</td>
+                <td>There will be a check-in/check-out button here</td>
+                <td>There will be a delete button here</td>
+            </tr>
+            </table>
+    
+</div>

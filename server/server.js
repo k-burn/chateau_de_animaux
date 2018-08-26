@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 //require routers
 const petRouter=require('./routes/pet.router');
 const guestRouter=require('./routes/guest.router');
+const clientRouter=require('./routes/client.router');
 //uses
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 //app.use ROUTERS
 app.use('/pets', petRouter);
 app.use('/guests', guestRouter);
+app.use('/clients', clientRouter);
 
 app.listen(PORT, ()=> {
     console.log(`Listening on port ${PORT}`);  

@@ -4,8 +4,8 @@
 <form ng-submit= "pc.addPet(pc.petToAdd)">
     <label for="owner">Select Owner:</label>
     <!-- To populate owner names, will do an ng-repeat through owners names -->
-    <select id="owner" ng-model="pc.petToAdd.owner">
-        <option value="ownerName">Owner Name Will Be Here</option>
+    <select id="owner" ng-model="pc.petToAdd.owner" >
+        <option ng-repeat="owner in pc.ownersList" value="{{owner.name}}">{{owner.name}}</option>
     </select>
     <label for ="petName">Pet Name:</label>
     <input id="petName" ng-model="pc.petToAdd.name" type="text" placeholder="e.g. James Earl Jones">
@@ -25,8 +25,8 @@
     <input id="color" ng-model="pc.petToAdd.color" type="text" placeholder="e.g. Calico">
     <label for="funFact">Fun Fact:</label>
     <input id="funFact" ng-model="pc.petToAdd.funFact" type="text" placeholder="e.g. Has starred in six feature films">
-    <label for="allergies">Allergies:</label>
-    <input id="allergies" ng-model="pc.petToAdd.allergies" type="text" placeholder="e.g. Water other than Evian">
+    <label for="allergies">Preferred Mendl's Order:</label>
+    <input id="allergies" ng-model="pc.petToAdd.allergies" type="text" placeholder="e.g. Courtesan au Chocolat">
     <label for="notes">Additional Notes:</label>
     <input id="notes" ng-model="pc.petToAdd.notes" type="text" placeholder="e.g. Can open gates by herself">
     <label for="petPic">Picture:</label>

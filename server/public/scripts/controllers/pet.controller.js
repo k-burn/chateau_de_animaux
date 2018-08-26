@@ -1,8 +1,10 @@
 petHotel.controller('PetController', function($http){
     let vm = this;
     vm.petList=[];
+    vm.ownersList =[];
 
     getPets();
+    getOwners();
     
     function getPets(){
         $http({
@@ -32,5 +34,16 @@ petHotel.controller('PetController', function($http){
         })
     }
 
+    function getOwners(){
+        $http({
+            method: 'GET',
+            url:'/clients',
+        }).then(function(response){
+            console.log('back from server with', response);
+            vm.ownersList= response.data;
+        }).catch(function(error){
+            console.log('error getting owners', error);
+        });//end get
+    }//end get owners
     
 })

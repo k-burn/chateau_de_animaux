@@ -14,13 +14,22 @@ html, body{
     flex-wrap: wrap;
     background-repeat:no-repeat;
     background-position: absolute;
-    background-color: pink;
+    background-color: rgb(218, 141, 138);
     background-size: cover;
     right: 50%;
     bottom: 50%; 
     margin: 0;
+    font-family: 'Cormorant Infant', serif;
 }
 
 path {
     fill: transparent;
-  }
+}
+
+.card{
+    background-color:rgb(255, 239, 226);
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    height: 250px;
+}

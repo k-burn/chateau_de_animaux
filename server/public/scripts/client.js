@@ -17,7 +17,7 @@ petHotel.config(['$routeProvider', function($routeProvider){
             controller: 'GuestController as gc'
         }).when('/checkInOut',{
             templateUrl: 'views/checkin-out.html',
-            controller: 'InOutController as ic'
+            controller: 'ClientController as cc'
         }).when('/logbook',{
             templateUrl: 'views/logbook.html',
             controller: 'LogController as lc'

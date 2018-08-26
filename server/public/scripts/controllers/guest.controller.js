@@ -15,4 +15,6 @@ petHotel.controller('GuestController', function($http){
         }).catch(function(error){
             console.log('Error getting pets:', error);
         });//end GET
-};//end getCurrentGuests
+    };//end getCurrentGuests
+})
+
