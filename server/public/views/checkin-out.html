@@ -20,7 +20,7 @@
                 <td>{{client.emergency_name}}</td>
                 <td>{{client.emergency_phone}}</td>
                 <td>There will be an edit button here</td>
-                <td>There will be a delete button here</td>
+                <td><button ng-click= "cc.deleteClient(client.id)">Delete</button></td>
             </tr>
         </table>
     </div>
@@ -31,6 +31,7 @@
         <table>
             <tr>
                 <th>Pet Name</th>
+                <th>Checked-In</th>
                 <th>Owner Name</th>
                 <th>Type</th>
                 <th>Subtype/Breed</th>
@@ -43,6 +44,7 @@
             </tr>
             <tr ng-repeat = "pet in pc.petList">
                 <td>{{pet.name}}</td>
+                <td>{{pet.checked_in}}</td>
                 <td>{{pet.owner_name}}</td>
                 <td>{{pet.type}}</td>
                 <td>{{pet.breed}}</td>
@@ -50,8 +52,8 @@
                 <td>{{pet.Mendl}}</td>
                 <td>{{pet.notes}}</td>
                 <td>There will be a edit button here</td>
-                <td>There will be a check-in/check-out button here</td>
-                <td>There will be a delete button here</td>
+                <td><button ng-click= "pc.checkIn(pet.id)">Check In</button></td>
+                <td><button ng-click= "pc.deletePet(pet.id)">Delete</button></td>
             </tr>
             </table>
     

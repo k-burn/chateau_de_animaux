@@ -28,6 +28,28 @@ router.post('/', (req, res) => {
         });
 });
 
+router.delete('/:id', (req, res)=>{
+    const idOfPetToDelete= req.params.id;
+    const queryText= 'DELETE FROM "pets" WHERE "id" = $1;';
+    pool.query(queryText, [idOfPetToDelete]).then((result)=>{
+        res.sendStatus(200);
+    }).catch((error)=> {
+        console.log('Error in DELETE, BBHMM', error);
+        res.sendStatus(500);
+    })
+});
+
+router.put('/:id', (req, res)=>{
+    const idOfPetToCheckIn = req.params.id;
+    let queryText = `UPDATE "pets" 
+                    SET "checked_in" = NOT "checked_in" WHERE "id" =$1;`;
+    pool.query(queryText, [idOfPetToCheckIn]).then( (result) => {
+                                res.sendStatus(201);
+                            }).catch((error)=>{
+                                res.sendStatus(500);
+                            });
+});
+
 
 
 module.exports = router;

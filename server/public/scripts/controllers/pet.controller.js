@@ -45,5 +45,21 @@ petHotel.controller('PetController', function($http){
             console.log('error getting owners', error);
         });//end get
     }//end get owners
+
+    vm.deletePet = function(id) {
+        console.log('delete pet with id: ', id);
+        $http.delete('/pets/' + id)
+          .then(function(response) {
+            getPets();
+        })
+    }
+
+    vm.checkIn = function(id) {
+        console.log('update person with id: ', id);
+        $http.put('/pets/' + id)
+          .then(function(response) {
+            getPets();
+        });
+    }
     
 })
