@@ -48,6 +48,20 @@ petHotel.controller('PetController', function($http){
         })
     }
 
+    vm.addCheckOut =function(dataOutToAdd){
+        console.log('In addCheckIn', dataOutToAdd);
+        $http({
+            method:'PUT',
+            url:'/checks/'+ dataOutToAdd.punch_id,
+            data: dataOutToAdd
+        }).then(function(response){
+            console.log('in POST response of addCheckIn', response.data);
+            vm.dataOutToAdd='';
+        }).catch(function(error){
+            console.log('Error in POST check-ins', error);
+        })
+    }
+
     function getOwners(){
         $http({
             method: 'GET',

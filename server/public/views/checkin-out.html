@@ -40,7 +40,8 @@
                 <td>{{pet.breed}}</td>
                 <td>There will be a edit button here</td>
                 <td>{{pet.checked_in}}</td>
-                <td><button ng-click= "pc.checkIn(pet.id)"><span ng-bind="pet.checked_in ? 'Check Out' : 'Check In'" data-toggle="modal" data-target="#myModal" data-who="cc.(pet.id)"></span></button></td>
+                <td><button ng-click= "pc.checkIn(pet.id)" ng-show="pet.checked_in" data-toggle="modal" data-target="#myModal" data-who="cc.(pet.id)">Check In</button>
+                    <button ng-click= "pc.checkIn(pet.id)" ng-show="!pet.checked_in" data-toggle="modal" data-target="#myOutModal" data-who="cc.(pet.id)">Check Out</button></td>
                 <td><button ng-click= "pc.deletePet(pet.id)">Delete</button></td>
             </tr>
             </table>
@@ -62,15 +63,15 @@
                     <form ng-submit= "pc.addCheckIn(pc.dataToAdd)">
                             <div class="row">
                               <label for="date">Date</label>
-                              <input ng-model= "pc.dataToAdd.indate" class="u-full-width" type="number" id="date" />
+                              <input ng-model= "pc.dataToAdd.indate" class="u-full-width" type="number" id="date" placeholder="e.g. 082518"/>
                             </div>
                             <div class="row">
                               <label for="time">Time</label>
-                              <input ng-model= "pc.dataToAdd.intime" class="u-full-width" type="number" id="time" />
+                              <input ng-model= "pc.dataToAdd.intime" class="u-full-width" type="number" id="time" placeholder="e.g. 0800"/>
                             </div>
                             <div class="row">
                                 <label for= "pet_id">Pet ID</label>
-                                <input ng-model= "pc.dataToAdd.pet_id" class="u-full-width" type="number" id="pet_id"/>
+                                <input ng-model= "pc.dataToAdd.pet_id" class="u-full-width" type="number" id="pet_id" placeholder="e.g. 89"/>
                             </div>
                             <input type="submit">
                             <button type="button" class="btn-warning" data-dismiss="modal">Cancel</button>
@@ -80,4 +81,37 @@
       
         </div>
       </div>
+
+
+      <div id="myOutModal" class="modal fade" role="dialog" ng-controller="PetController as pc">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Check Out</h4>
+                </div>
+                <div class="modal-body">
+                        <form ng-submit= "pc.addCheckOut(pc.dataOutToAdd)">
+                                <div class="row">
+                                  <label for="date">Date</label>
+                                  <input ng-model= "pc.dataOutToAdd.outDate" class="u-full-width" type="number" id="outDate" placeholder="e.g. 082518"/>
+                                </div>
+                                <div class="row">
+                                  <label for="time">Time</label>
+                                  <input ng-model= "pc.dataOutToAdd.outTime" class="u-full-width" type="number" id="outTime" placeholder="e.g. 0800"/>
+                                </div>
+                                <div class="row">
+                                    <label for= "punch_id">Punch ID</label>
+                                    <input ng-model= "pc.dataOutToAdd.punch_id" class="u-full-width" type="number" id="punch_id" placeholder="e.g. 79"/>
+                                </div>
+                                <input type="submit">
+                                <button type="button" class="btn-warning" data-dismiss="modal">Cancel</button>
+                        </form>
+                </div>
+              </div>
+          
+            </div>
+          </div>
       
