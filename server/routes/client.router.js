@@ -5,7 +5,7 @@ var pool= require('../modules/pool.js');
 router.get('/', (req, res)=>{
     console.log('in GET');
     const query =`SELECT "owners"."name", COUNT("pets"."owner_id") FROM "owners"
-                JOIN "pets" ON "owners"."id" = "pets"."owner_id"
+                LEFT JOIN "pets" ON "owners"."id" = "pets"."owner_id"
                 GROUP BY "owners"."name";`;
     pool.query(query).then((results) =>{
         console.log(results);
@@ -30,10 +30,10 @@ router.post('/', (req, res) => {
         });
 });
 
-router.delete('/:id', (req, res)=>{
-    const idOfClientToDelete= req.params.id;
-    const queryText= 'DELETE FROM "owners" WHERE "id" = $1;';
-    pool.query(queryText, [idOfClientToDelete]).then((result)=>{
+router.delete('/:name', (req, res)=>{
+    const  nameOfClientToDelete= req.params.name;
+    const queryText= 'DELETE FROM "owners" WHERE "name" LIKE $1;';
+    pool.query(queryText, [nameOfClientToDelete]).then((result)=>{
         res.sendStatus(200);
     }).catch((error)=> {
         console.log('Error in DELETE, BBHMM', error);

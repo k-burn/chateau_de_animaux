@@ -37,8 +37,11 @@ path {
     margin: 2rem;
     padding: 1rem;
     width: 20rem;
-    height: 24rem;
+    height: 25rem;
     
+}
+.card-text{
+    height: 20rem;
 }
 .form{
     height: 40rem;
@@ -61,6 +64,9 @@ path {
 
 .btn:visited{
     color: rgb(255, 239, 226);
+}
+.deleteBTN:disabled{
+    opacity: .15;
 }
 
 #managementBTN{

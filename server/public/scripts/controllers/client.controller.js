@@ -32,11 +32,13 @@ petHotel.controller('ClientController', function($http){
         })
     }
 
-    vm.deleteClient = function(id) {
-        console.log('delete person with id: ', id);
-        $http.delete('/clients/' + id)
+    vm.deleteClient = function(name) {
+        console.log('delete person with name: ', name);
+        $http.delete('/clients/' + name)
           .then(function(response) {
             getOwners();
+        }).catch(function(error){
+            console.log('error deleting');
         })
     }
 

@@ -6,11 +6,13 @@
             <th>Name</th>
             <th>Number of Pets</th>
             <th>Remove</th>
+            <th>More Info</th>
         </thead>
-        <tr ng-repeat = "client in cc.clientList">
+        <tr ng-repeat = "client in cc.clientList | orderBy : 'name'">
             <td>{{client.name}}</td>
             <td>{{client.count}}</td>
-            <td><button ng-click= "cc.deleteClient(client.id)">Delete</button></td>
+            <td><button ng-click= "cc.deleteClient(client.name)" ng-disabled= "client.count != 0" class="deleteBTN">Delete</button></td>
+            <td><button type="button"   data-toggle="modal" data-target="#myModal" data-who="cc.(client.id)">More Info</button></td>
         </tr>
     </table>
 </div>
@@ -29,16 +31,19 @@
                 <th>Check-In/Check-Out</th>
                 <th>Remove</th>
             </thead>
-            <tr ng-repeat = "pet in pc.petList">
+            <tr ng-repeat = "pet in pc.petList | orderBy : 'name'">
                 <td>{{pet.name}}</td>
                 <td>{{pet.owner_name}}</td>
                 <td>{{pet.type}}</td>
                 <td>{{pet.breed}}</td>
                 <td>There will be a edit button here</td>
                 <td>{{pet.checked_in}}</td>
-                <td><button ng-click= "pc.checkIn(pet.id)">Check In</button></td>
+                <td><button ng-click= "pc.checkIn(pet.id)"><span ng-bind="pet.checked_in ? 'Check Out' : 'Check In'"></span></button></td>
                 <td><button ng-click= "pc.deletePet(pet.id)">Delete</button></td>
             </tr>
             </table>
     
 </div>
+
+
+<!-- Modal -->
