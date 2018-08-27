@@ -40,7 +40,7 @@
                 <td>{{pet.owner_name}}</td>
                 <td>{{pet.type}}</td>
                 <td>{{pet.breed}}</td>
-                <td>There will be a edit button here</td>
+                <td><button >Edit</button></td>
                 <td>{{pet.checked_in}}</td>
                 <td><button class = "checkInBTN" ng-click= "pc.checkIn(pet.id)" ng-show="!pet.checked_in" data-toggle="modal" data-target="#myModal" data-who="pc.(pet.id)">Check In</button>
                     <button ng-click= "pc.checkIn(pet.id)" ng-show="pet.checked_in" data-toggle="modal" data-target="#myOutModal" data-who="pc.pet.id">Check Out</button></td>

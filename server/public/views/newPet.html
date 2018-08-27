@@ -2,15 +2,20 @@
 <h2>New Pet</h2>
 
 <form ng-submit= "pc.addPet(pc.petToAdd)">
-    <label for="owner">Select Owner:</label>
+    <tr>
+<label for="owner">Select Owner:</label></td>
     <!-- To populate owner names, will do an ng-repeat through owners names -->
     <select id="owner" ng-model="pc.petToAdd.owner" >
         <option ng-repeat="owner in pc.ownersList" value="{{owner.id}}" >{{owner.name}}</option>
-    </select>
-    <label for ="petName">Pet Name:</label>
-    <input id="petName" ng-model="pc.petToAdd.name" type="text" placeholder="e.g. James Earl Jones">
-    <label for ="petType">Type of Pet:</label>
-    <select id="petType" ng-model="pc.petToAdd.type">
+        </select></td>
+    <br>
+    <tr>
+    <td><label for ="petName">Pet Name:</label></td>
+    <td><input id="petName" ng-model="pc.petToAdd.name" type="text" placeholder="e.g. James Earl Jones"></td></tr>
+    <br>
+    <tr>
+    <td><label for ="petType">Type of Pet:</label></td>
+    <td><select id="petType" ng-model="pc.petToAdd.type">
         <option value="cat">Cat</option>
         <option value="dog">Dog</option>
         <option value="rabbit">Rabbit</option>
@@ -18,19 +23,23 @@
         <option value="ferret">Ferret</option>
         <option value="llama">Llama</option>
         <option value="chicken">Chicken</option>
-    </select>
+        </select></td></tr>
+    <br>
     <label for="breed">Breed/Subtype:</label>
     <input id="breed" ng-model="pc.petToAdd.breed" type="text" placeholder="e.g. Shih-Tzu">
     <br>
     <label for="color">Color:</label>
     <input id="color" ng-model="pc.petToAdd.color" type="text" placeholder="e.g. Calico">
+    <br>
     <label for="funFact">Fun Fact:</label>
     <input id="funFact" ng-model="pc.petToAdd.funFact" type="text" placeholder="e.g. Has starred in six feature films">
     <br>
     <label for="allergies">Preferred Mendl's Order:</label>
     <input id="allergies" ng-model="pc.petToAdd.allergies" type="text" placeholder="e.g. Courtesan au Chocolat">
+    <br>
     <label for="notes">Additional Notes:</label>
     <input id="notes" ng-model="pc.petToAdd.notes" type="text" placeholder="e.g. Can open gates by herself">
+    <br>
     <label for="petPic">Picture:</label>
     <select id="petPic" ng-model="pc.petToAdd.pic">
             <option value="images/chickenbowtie.jpg">Chicken</option>
@@ -43,7 +52,7 @@
             <option value="images/properpig.jpg">Pig</option>
             <option value="images/rosypig.jpg">Piglet</option>
             <option value="images/shoko.jpg">Shoko</option>
-            <option value="images/borderCollie.jpg">Border Collie</option>
+            <option value="images/cody.jpg">Border Collie</option>
     </select>
     <br>
     <input type="submit">
