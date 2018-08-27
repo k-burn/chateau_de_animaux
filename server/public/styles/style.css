@@ -80,9 +80,15 @@ path {
     background-color:rgb(120, 107, 122);
     color:rgb(255, 239, 226);
 }
+ .tableHolder{
+    align-items:center;
+    width: 100%;
+
+ }
 
 table {
     border-collapse: collapse;
+    margin: auto;
 }
 
 table, th, td {

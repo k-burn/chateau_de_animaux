@@ -31,4 +31,19 @@ router.put('/:id', (req, res)=>{
                             });
 });
 
+router.get('/', (req, res)=>{
+    console.log('in GET');
+    let queryText =`SELECT MAX("id")
+                    FROM "check-ins"
+                    WHERE pet_id = $1;`;
+    pool.query(queryText, [pet_id])
+        .then((results) =>{
+            console.log(results);
+            res.send(results.rows);
+    }).catch((error)=>{
+        console.log('Error making GET request');
+        res.sendStatus(500);
+    }); //end GET  
+});
+
 module.exports = router;

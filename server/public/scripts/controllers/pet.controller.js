@@ -3,6 +3,7 @@ petHotel.controller('PetController', function($http){
     vm.petList=[];
     vm.ownersList =[];
 
+
     getPets();
     getOwners();
     
@@ -79,6 +80,7 @@ petHotel.controller('PetController', function($http){
         $http.delete('/pets/' + id)
           .then(function(response) {
             getPets();
+            getOwners();
         })
     }
 
