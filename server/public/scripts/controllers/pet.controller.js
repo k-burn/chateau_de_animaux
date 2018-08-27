@@ -20,7 +20,7 @@ petHotel.controller('PetController', function($http){
 
     vm.addPet =function(petToAdd){
         console.log('in addPet');
-        
+        console.log(petToAdd);
         $http({
             method:'POST',
             url: '/pets',
@@ -37,7 +37,7 @@ petHotel.controller('PetController', function($http){
     function getOwners(){
         $http({
             method: 'GET',
-            url:'/clients',
+            url:'/owners',
         }).then(function(response){
             console.log('back from server with', response);
             vm.ownersList= response.data;

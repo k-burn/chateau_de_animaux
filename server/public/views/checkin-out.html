@@ -1,57 +1,41 @@
-<h2>Check In/ Check Out</h2>
+<h2>Manage Clients and Pets</h2>
 
 <div ng-controller="ClientController as cc">
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Email Address</th>
-                <th>Phone Number</th>
-                <th>Number of Pets</th>
-                <th>Emergency Contact </th>
-                <th>Emergency Phone Number</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            <tr ng-repeat = "client in cc.clientList">
-                <td>{{client.name}}</td>
-                <td>{{client.email}}</td>
-                <td>{{client.phone}}</td>
-                <td>number of pets will be here</td>
-                <td>{{client.emergency_name}}</td>
-                <td>{{client.emergency_phone}}</td>
-                <td>There will be an edit button here</td>
-                <td><button ng-click= "cc.deleteClient(client.id)">Delete</button></td>
-            </tr>
-        </table>
-    </div>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Number of Pets</th>
+            <th>Remove</th>
+        </thead>
+        <tr ng-repeat = "client in cc.clientList">
+            <td>{{client.name}}</td>
+            <td>{{client.count}}</td>
+            <td><button ng-click= "cc.deleteClient(client.id)">Delete</button></td>
+        </tr>
+    </table>
 </div>
 
+<br>
 
 <div ng-controller="PetController as pc">
         <table>
-            <tr>
+            <thead>
                 <th>Pet Name</th>
-                <th>Checked-In</th>
                 <th>Owner Name</th>
                 <th>Type</th>
                 <th>Subtype/Breed</th>
-                <th>Color</th>
-                <th>Preferred Mendl's Order</th>
-                <th>Notes</th>
                 <th>Edit</th>
+                <th>Checked-In</th>
                 <th>Check-In/Check-Out</th>
                 <th>Remove</th>
-            </tr>
+            </thead>
             <tr ng-repeat = "pet in pc.petList">
                 <td>{{pet.name}}</td>
-                <td>{{pet.checked_in}}</td>
                 <td>{{pet.owner_name}}</td>
                 <td>{{pet.type}}</td>
                 <td>{{pet.breed}}</td>
-                <td>{{pet.color}}</td>
-                <td>{{pet.Mendl}}</td>
-                <td>{{pet.notes}}</td>
                 <td>There will be a edit button here</td>
+                <td>{{pet.checked_in}}</td>
                 <td><button ng-click= "pc.checkIn(pet.id)">Check In</button></td>
                 <td><button ng-click= "pc.deletePet(pet.id)">Delete</button></td>
             </tr>

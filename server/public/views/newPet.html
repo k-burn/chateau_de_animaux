@@ -5,7 +5,7 @@
     <label for="owner">Select Owner:</label>
     <!-- To populate owner names, will do an ng-repeat through owners names -->
     <select id="owner" ng-model="pc.petToAdd.owner" >
-        <option ng-repeat="owner in pc.ownersList" value="{{owner.name}}">{{owner.name}}</option>
+        <option ng-repeat="owner in pc.ownersList" value="{{owner.id}}" >{{owner.name}}</option>
     </select>
     <label for ="petName">Pet Name:</label>
     <input id="petName" ng-model="pc.petToAdd.name" type="text" placeholder="e.g. James Earl Jones">
@@ -21,10 +21,12 @@
     </select>
     <label for="breed">Breed/Subtype:</label>
     <input id="breed" ng-model="pc.petToAdd.breed" type="text" placeholder="e.g. Shih-Tzu">
+    <br>
     <label for="color">Color:</label>
     <input id="color" ng-model="pc.petToAdd.color" type="text" placeholder="e.g. Calico">
     <label for="funFact">Fun Fact:</label>
     <input id="funFact" ng-model="pc.petToAdd.funFact" type="text" placeholder="e.g. Has starred in six feature films">
+    <br>
     <label for="allergies">Preferred Mendl's Order:</label>
     <input id="allergies" ng-model="pc.petToAdd.allergies" type="text" placeholder="e.g. Courtesan au Chocolat">
     <label for="notes">Additional Notes:</label>
@@ -41,6 +43,7 @@
             <option value="images/properpig.jpg">Pig</option>
             <option value="images/rosypig.jpg">Piglet</option>
     </select>
+    <br>
     <input type="submit">
 </form>
 

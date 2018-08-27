@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Grand Budapets Hotel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Codystar|Cormorant+Infant|Cormorant+Unicase|Linden+Hill" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Cinzel|IM+Fell+French+Canon+SC" rel="stylesheet">
 
     <!--Angular sourcing-->
     <script src="/vendors/angular.js"></script>
@@ -28,14 +30,16 @@
 
 </head>
 <body ng-app="AnimalHotel" id="body">
-    <h1><a class="title" href="/">Grand Budapets Hotel</a></h1>
+    <h1><a id="title" class="title" href="/">Grand Budapets Hotel</a></h1>
+    <div>
+        <a class="btn" id="managementBTN" href="#!/checkInOut" role="button">Management</a>
+    </div>
     <nav class="navbar">
         <div class="collapse navbar-collapse">
-            <a class= "button" href="#!/newClient" role="button">New Client</a>
-            <a class= "button" href="#!/newPet" role="button">New Pet</a>
-            <a class= "button" href="#!/checkInOut" role="button">Check In/Check Out</a>
-            <a class= "button" href="#!/currentGuests" role="button">Current Guests</a>
-            <a class= "button" href="#!/logbook" role="button">Log Book</a>
+            <a class="btn"href="#!/newClient" role="button">New Client</a>
+            <a class="btn" href="#!/newPet" role="button">New Pet</a>
+            <a class="btn" href="#!/currentGuests" role="button">Current Guests</a>
+            <a class="btn" href="#!/logbook" role="button">Log Book</a>
         </div>
     </nav>
     <ng-view></ng-view>

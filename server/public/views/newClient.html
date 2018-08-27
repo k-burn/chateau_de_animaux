@@ -1,20 +1,22 @@
 <div ng-controller="ClientController as cc">
     <h2>New Client</h2>
     <br>
-    <form ng-submit= "cc.addClient(cc.clientToAdd)">
-        <label for ="clientName">Name:</label>
-        <input id="clientName" type="text" placeholder="e.g. Pablo Escobar" ng-model="cc.clientToAdd.name">
-        <br>
-        <label for ="clientPhone">Phone Number:</label>
-        <input id="clientPhone" type="number" placeholder="8675309" ng-model="cc.clientToAdd.phone">
-        <label for ="clientEmail">Email Address:</label>
-        <input id="clientEmail" type="text" placeholder="ILoveHippos49@gmail.com" ng-model="cc.clientToAdd.email">
-        <br>
-        <h5>Emergency Contact</h5>
-        <label for ="emergencyContactName">Name:</label>
-        <input id="emergencyContactName" type="text" placeholder="e.g. Maria Victoria Henao" ng-model="cc.clientToAdd.emergency_name">
-        <label for ="emergencyPhone">Phone Number:</label>
-        <input id="emergencyPhone" type="number" placeholder="8675309" ng-model="cc.clientToAdd.emergency_phone">
-        <input type="submit">
-    </form>
+    <div >
+        <form ng-submit= "cc.addClient(cc.clientToAdd)">
+            <label for ="clientName">Name:</label>
+            <input id="clientName" type="text" placeholder="e.g. Pablo Escobar" ng-model="cc.clientToAdd.name">
+            <br>
+            <label for ="clientPhone">Phone Number:</label>
+            <input id="clientPhone" type="number" placeholder="8675309" ng-model="cc.clientToAdd.phone">
+            <label for ="clientEmail">Email Address:</label>
+            <input id="clientEmail" type="text" placeholder="ILoveHippos49@gmail.com" ng-model="cc.clientToAdd.email">
+            <br>
+            <h5>Emergency Contact</h5>
+            <label for ="emergencyContactName">Name:</label>
+            <input id="emergencyContactName" type="text" placeholder="e.g. Maria Victoria Henao" ng-model="cc.clientToAdd.emergency_name">
+            <label for ="emergencyPhone">Phone Number:</label>
+            <input id="emergencyPhone" type="number" placeholder="8675309" ng-model="cc.clientToAdd.emergency_phone">
+            <input type="submit">
+        </form>
+    </div>
 </div>
