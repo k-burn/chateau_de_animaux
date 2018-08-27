@@ -12,7 +12,7 @@
             <td>{{client.name}}</td>
             <td>{{client.count}}</td>
             <td><button ng-click= "cc.deleteClient(client.name)" ng-disabled= "client.count != 0" class="deleteBTN">Delete</button></td>
-            <td><button type="button"   data-toggle="modal" data-target="#myModal" data-who="cc.(client.id)">More Info</button></td>
+            <td><button type="button" >More Info</button></td>
         </tr>
     </table>
 </div>
@@ -23,6 +23,7 @@
         <table>
             <thead>
                 <th>Pet Name</th>
+                <th>Pet ID</th>
                 <th>Owner Name</th>
                 <th>Type</th>
                 <th>Subtype/Breed</th>
@@ -33,12 +34,13 @@
             </thead>
             <tr ng-repeat = "pet in pc.petList | orderBy : 'name'">
                 <td>{{pet.name}}</td>
+                <td>{{pet.id}}</td>
                 <td>{{pet.owner_name}}</td>
                 <td>{{pet.type}}</td>
                 <td>{{pet.breed}}</td>
                 <td>There will be a edit button here</td>
                 <td>{{pet.checked_in}}</td>
-                <td><button ng-click= "pc.checkIn(pet.id)"><span ng-bind="pet.checked_in ? 'Check Out' : 'Check In'"></span></button></td>
+                <td><button ng-click= "pc.checkIn(pet.id)"><span ng-bind="pet.checked_in ? 'Check Out' : 'Check In'" data-toggle="modal" data-target="#myModal" data-who="cc.(pet.id)"></span></button></td>
                 <td><button ng-click= "pc.deletePet(pet.id)">Delete</button></td>
             </tr>
             </table>
@@ -47,3 +49,35 @@
 
 
 <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" ng-controller="PetController as pc">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Check In</h4>
+            </div>
+            <div class="modal-body">
+                    <form ng-submit= "pc.addCheckIn(pc.dataToAdd)">
+                            <div class="row">
+                              <label for="date">Date</label>
+                              <input ng-model= "pc.dataToAdd.indate" class="u-full-width" type="number" id="date" />
+                            </div>
+                            <div class="row">
+                              <label for="time">Time</label>
+                              <input ng-model= "pc.dataToAdd.intime" class="u-full-width" type="number" id="time" />
+                            </div>
+                            <div class="row">
+                                <label for= "pet_id">Pet ID</label>
+                                <input ng-model= "pc.dataToAdd.pet_id" class="u-full-width" type="number" id="pet_id"/>
+                            </div>
+                            <input type="submit">
+                            <button type="button" class="btn-warning" data-dismiss="modal">Cancel</button>
+                    </form>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
